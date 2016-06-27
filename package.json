@@ -1,0 +1,30 @@
+{
+  "name": "http-promise-less",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "build": "npm run build:app; npm run build:lib",
+    "build:app": "babel --source-maps inline --out-file ./src/app.min.js --ignore '*.spec.js,*.min.js' './src/**/*.module.js' './src/**/*!(module).js'",
+    "build:lib": "uglifyjs -o ./src/lib.min.js node_modules/angular/angular.min.js node_modules/angular-cache/dist/angular-cache.min.js",
+    "start": "npm run build; http-server ./src -o"
+  },
+  "author": "Mohammed Chelouti",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "angular-cache": "^4.6.0",
+    "angular-mocks": "^1.5.7",
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-preset-es2015": "^6.9.0",
+    "http-server": "^0.9.0",
+    "jasmine": "^2.4.1",
+    "karma": "^1.0.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.7.0"
+  }
+}

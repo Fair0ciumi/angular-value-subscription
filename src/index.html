@@ -1,0 +1,15 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>foo</title>
+        
+    </head>
+    <body>
+        <div ng-controller="DisplayCtrl">
+            Number: {{ randomNumber().val }}
+            <button ng-click="randomNumber(true)" type="button">New Number</button>
+        </div>
+        <script src="./lib.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./app.min.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>
